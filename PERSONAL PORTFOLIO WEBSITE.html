@@ -1,0 +1,117 @@
+<!-- index.html (Landing Page) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="PERSONAL PORTFOLIO WEBSITE.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+        </ul>
+    </nav>
+    <header id="home">
+        <h1>Welcome to my Portfolio!</h1>
+        <p>I'm ARNAV PUGGAL, a passionate Developer,Designer,Software/Tech Enthausiast</p>
+    </header>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+<!-- about.html (About Me Page) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="stylesheet" href="PERSONAL PORTFOLIO WEBSITE.css">
+</head>
+<body>
+    <nav>
+    </nav>
+    <header id="about">
+        <h1>About Me</h1>
+        <p>I am Arnav Puggal, a passionate individual with a deep-rooted curiosity for technology and a strong ambition to excel in the field of quantum mechanics, particularly in software development. My journey reflects a commitment to personal growth, where I leverage both my physical and mental strengths to achieve my goals. As an athlete, I draw parallels between my experiences on the basketball court and my academic pursuits, emphasizing the importance of practice and perseverance.
+
+            Despite facing initial challenges in coding and mechanics, I have cultivated a growth mindset that fuels my determination to master these skills. My achievements include winning multiple ethnotech competitions in programming and mechanics, underscoring my dedication and talent in the tech field.
+            
+            I firmly believe in giving back to the community, engaging in various activities that not only support others but also enhance my own skills and knowledge. My multifaceted interests in technology, sports, and community service shape me into a well-rounded individual ready to make a meaningful impact in the tech industry.</p>
+    </header>
+    <section>
+        <h2>My Skills</h2>
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>Python</li>
+            <li>JavaScript</li>
+            <li>Quantum Mechanics Knowledge: A strong foundation and interest in quantum mechanics</li>
+            <li>Coding:Aspiration and dedication to excel in software development with Experience in programming, with a focus on overcoming initial challenges.</li>
+            <li>Mechanics: Skills in mechanics, demonstrated through participation in competitions.</li>
+            <li>Perseverance: Ability to practice and persist in both sports and academic pursuits.</li>
+            <li>Growth Mindset: A commitment to personal development and learning from challenges.</li>
+            <li>Community Engagement: Involvement in various activities aimed at giving back to society and enhancing personal skills.</li>
+            <li>Competitive Spirit: Proven success in various competitions, showcasing competitive programming and mechanics skills.</li>
+        </ul>
+    </section>
+    
+    <script src="script.js"></script>
+</body>
+</html>
+
+<!-- projects.html (Projects Page) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="stylesheet" href="PERSONAL PORTFOLIO WEBSITE.css">
+</head>
+<body>
+    <nav>
+    </nav>
+    <header id="projects">
+        <h1>My Projects</h1>
+        <p>This is a showcase of my projects.</p>
+    </header>
+    <section>
+        <div class="project-container" id="project-container">
+            <!-- Projects will be dynamically inserted here -->
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 ARNAV PUGGAL All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        // Fetch GitHub repositories
+        async function fetchGitHubRepos() {
+            const response = await fetch('https://api.github.com/users/12asascoder/repos');
+            const repos = await response.json();
+            const projectContainer = document.getElementById('project-container');
+
+            repos.forEach(repo => {
+                const projectDiv = document.createElement('div');
+                projectDiv.classList.add('project');
+                projectDiv.innerHTML = `
+                    <h2>${repo.name}</h2>
+                    <p>${repo.description || 'No description available.'}</p>
+                    <a href="${repo.html_url}" target="_blank">View Project</a>
+                `;
+                projectContainer.appendChild(projectDiv);
+            });
+        }
+
+        // Call the function to fetch and display repositories
+        fetchGitHubRepos();
+    </script>
+</body>
+</html>
