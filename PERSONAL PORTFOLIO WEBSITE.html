@@ -10,16 +10,17 @@
 <body>
     <nav>
         <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#about">ABOUT ME</a></li>
+            <li><a href="#projects">PROJECTS</a></li>
+            <li><a href="#CONTACT ME">CONTACT ME </a></li>
         </ul>
     </nav>
     <header id="home">
         <h1>Welcome to my Portfolio!</h1>
-        <p>I'm ARNAV PUGGAL, a passionate Developer,Designer,Software/Tech Enthausiast</p>
+        <p class="glow-text">I'm ARNAV PUGGAL, a passionate Developer,Designer,Software/Tech Enthausiast</p>
+        <img src="arnav_puggal.jpg"ARNAV PUGGAL" class="top-right-image">
     </header>
-
     <script src="script.js"></script>
 </body>
 </html>
@@ -62,6 +63,7 @@
         </ul>
     </section>
     
+    
     <script src="script.js"></script>
 </body>
 </html>
@@ -86,6 +88,15 @@
         <div class="project-container" id="project-container">
             <!-- Projects will be dynamically inserted here -->
         </div>
+    </section>
+    <section id="CONTACT ME">
+        <h2>Contact Me</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
     </section>
     <footer>
         <p>&copy; 2024 ARNAV PUGGAL All rights reserved.</p>
@@ -113,5 +124,6 @@
         // Call the function to fetch and display repositories
         fetchGitHubRepos();
     </script>
+    
 </body>
 </html>
