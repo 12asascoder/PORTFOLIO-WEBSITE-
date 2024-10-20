@@ -10,6 +10,15 @@ nav {
     padding: 1em;
     text-align: center;
 }
+/* Add this to your existing CSS */
+#about {
+    margin-bottom: 10px; /* Adjust this value as needed */
+}
+
+#skills {
+    margin-top: 40px; /* Optional: Adjust this value as needed */
+}
+
 
 nav ul {
     list-style: none;
@@ -32,7 +41,17 @@ header {
     background-color: #f7f7f7;
     padding: 2em;
     text-align: center;
+    position: relative; /* Establishes a positioning context */
+    height: 100px; /* Adjust height as needed */
+
 }
+.top-right-image {
+    position: absolute; /* Allows positioning relative to the header */
+    top: 10px; /* Adjusts distance from the top */
+    left: 10px; /* Adjusts distance from the right */
+    width: 175px; /* Adjust width as needed */
+    height: auto; /* Maintains aspect ratio */
+  }
 
 section {
     padding: 2em;
@@ -60,8 +79,42 @@ footer {
     clear: both;
 }
 
-/* Responsive Design */
+/* Contact Me Section Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align the form elements */
+    padding: 20px;
+    border: 1px solid #ddd; /* Add border to the form */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    max-width: 400px; /* Limit the width of the form */
+    margin: auto; /* Center the form horizontally */
+}
 
+form input, form textarea {
+    width: 100%; /* Full width for input and textarea */
+    margin: 10px 0; /* Space between elements */
+    padding: 10px; /* Padding inside input fields */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+}
+
+button {
+    padding: 10px;
+    background: #333; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer on hover */
+    width: 100%; /* Full width for button */
+}
+
+button:hover {
+    background: #555; /* Darker background on hover */
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
     nav ul {
         flex-direction: column;
@@ -70,4 +123,9 @@ footer {
         margin-bottom: 10px;
     }
     .project-container {
-        flex-direction:
+        flex-direction: column; /* Adjust for smaller screens */
+    }
+    form {
+        width: 90%; /* Full width on smaller screens */
+    }
+}
